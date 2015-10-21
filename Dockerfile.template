@@ -1,4 +1,4 @@
-FROM resin/raspberrypi2-node:latest
+FROM resin/%%RESIN_MACHINE_NAME%%:latest
 
 ENV INITSYSTEM on
 
