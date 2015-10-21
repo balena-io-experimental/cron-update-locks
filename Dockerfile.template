@@ -1,0 +1,15 @@
+FROM resin/raspberrypi2-node:latest
+
+ENV INITSYSTEM on
+
+WORKDIR /usr/src/app
+
+COPY jobs.sh deps.sh package.json ./
+
+RUN DEBIAN_FRONTEND=noninteractive JOBS=MAX npm install --unsafe-perm
+
+RUN crontab 'jobs.sh'
+
+COPY /app ./
+
+CMD [ "npm", "start" ] 

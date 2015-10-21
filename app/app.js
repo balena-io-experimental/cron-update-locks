@@ -1,0 +1,1 @@
+setInterval(function() { console.log("My app is running without update interuptions") }, 10000);
