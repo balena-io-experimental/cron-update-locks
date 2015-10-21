@@ -1,8 +1,6 @@
-# cron-example
+# cron-updates-example
 
-This is a simple [resin.io][resin] example showing how to use cron on a
-raspberry pi 2.
+This example makes use of the [resin.io update locking feature](http://docs.resin.io/#/pages/runtime/supervisor-api.md#update-locking) to schedule updates only between midnight at 00:10. 
 
-It outputs 'job' to the resin logs every minute.
+It uses [npm/lockfile](https://github.com/npm/lockfile) to manage the lockfile and cron to do the scheduling. 
 
-[resin]:https://resin.io
