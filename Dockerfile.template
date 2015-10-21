@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%:latest
+FROM resin/%%RESIN_MACHINE_NAME%%-node:latest
 
 ENV INITSYSTEM on
 
