@@ -4,11 +4,11 @@ ENV INITSYSTEM on
 
 WORKDIR /usr/src/app
 
-COPY jobs.sh deps.sh package.json ./
+COPY jobs.txt deps.sh package.json ./
 
 RUN DEBIAN_FRONTEND=noninteractive JOBS=MAX npm install --unsafe-perm
 
-RUN crontab 'jobs.sh'
+RUN crontab jobs.txt
 
 COPY /app ./
 
