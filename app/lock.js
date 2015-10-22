@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var lockFile = require('lockfile')
 
-lockFile.lock('../../../data/resin-updates.lock', function(err) {
+lockFile.lock('resin-updates.lock', function(err) {
   if (err != null) {
     throw new Error('Could not acquire lock: ', err);
   } else {
