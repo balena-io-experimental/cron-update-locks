@@ -13,4 +13,4 @@ WORKDIR /usr/src/app
 
 COPY /app ./
 
-CMD bash app.sh
+CMD [ "bash", "app.sh" ]
