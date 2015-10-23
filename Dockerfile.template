@@ -1,15 +1,16 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-node:latest
+FROM resin/%%RESIN_MACHINE_NAME%%-debian:latest
 
 ENV INITSYSTEM on
 
-WORKDIR /usr/src/app
+RUN apt-get update && apt-get install -y cron && \
+apt-get clean && rm -rf /var/lib/apt/lists/*
 
-COPY jobs.txt deps.sh package.json ./
-
-RUN DEBIAN_FRONTEND=noninteractive JOBS=MAX npm install --unsafe-perm
+COPY jobs.txt ./
 
 RUN crontab jobs.txt
 
+WORKDIR /usr/src/app
+
 COPY /app ./
 
-CMD [ "npm", "start" ] 
+CMD ['bash', 'app.sh']
