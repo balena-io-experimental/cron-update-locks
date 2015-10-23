@@ -1,0 +1,1 @@
+while sleep 10; do echo "My app is running without interruption"; done
